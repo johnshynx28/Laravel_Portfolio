@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+html { scroll-behavior: smooth; }
+
+.font-display { font-family: 'Playfair Display', serif; }
+.font-body    { font-family: 'DM Sans', sans-serif; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: #c8a96e; border-radius: 2px; }
+
+/* thin gold line on the left side of each section */
+.section-line::before {
+    content: '';
+    position: absolute;
+    left: 40px; top: 15%; bottom: 15%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, #c8a96e, transparent);
+    opacity: 0.25;
+    pointer-events: none;
+}
+@media (max-width: 768px) { .section-line::before { display: none; } }
+
+/* grid pattern behind the Home section */
+.home-grid::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(200,169,110,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200,169,110,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+}
